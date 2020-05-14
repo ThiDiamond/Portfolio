@@ -16,8 +16,9 @@ import { returnLanguage } from '../utils';
 
 class NavHeader extends Component {
   constructor(props) {
+    const { pathname } = window.location;
     super(props);
-    const isHome = window.location.pathname === '/home' || '/' ? true : false;
+    const isHome = pathname === '/home' || pathname === '/' ? true : false;
     this.state = {
       collapsed: false,
       isHome,
