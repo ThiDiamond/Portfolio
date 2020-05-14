@@ -8,14 +8,11 @@ import {
 } from 'mdbreact';
 import React from 'react';
 import image from '../assets/galaxy.jpg';
-import { introButton, introDescription, introTitle } from '../Texts';
+import { introButton, introDescription } from '../Texts';
 import { returnLanguage } from '../utils';
 const Intro = () => {
-  const title = returnLanguage(introTitle);
   const description = returnLanguage(introDescription);
   const button = returnLanguage(introButton);
-  const [whiteTitle, colorTitle] = title.split(' ');
-
   return (
     <>
       <MDBView src={image} fixed>
@@ -24,9 +21,10 @@ const Intro = () => {
             <MDBRow>
               <MDBCol md='12' className='mb-4 white-text text-center'>
                 <h1 className='display-3 mb-0 pt-md-5 pt-5 white-text font-weight-bold'>
-                  {whiteTitle}
+                  Thiago
+                  {`\n`}
                   <span className='light-steel-text font-weight-bold'>
-                    {` ${colorTitle}`}
+                    Santana
                   </span>
                 </h1>
                 <hr className='hr-light my-4' />

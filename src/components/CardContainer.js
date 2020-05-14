@@ -5,7 +5,7 @@ const CardContainer = (props) => {
   const { children } = props;
   return (
     <SectionContainer noBorder className='text-center'>
-      <MDBCard className='mb-5 px-5 pb-5'>
+      <MDBCard className='mb-5 px-2 px-md-5 pb-5'>
         <MDBCardBody>{children}</MDBCardBody>
       </MDBCard>
     </SectionContainer>

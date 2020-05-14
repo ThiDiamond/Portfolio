@@ -31,7 +31,7 @@ const Skills = () => {
     <CardContainer>
       <h2 className='h1-responsive font-weight-bold my-5'>{title}</h2>
 
-      <MDBRow className='mb-5 mx-5'>
+      <MDBRow className='mb-5'>
         <MDBCol md='4'>
           <MDBIcon fab icon='react' size='3x' style={{ color: '#00d8ff' }} />
           <h5 className='font-weight-bold my-4'>React JS</h5>
@@ -53,7 +53,7 @@ const Skills = () => {
           <p className='grey-text mb-md-0 mb-5'>{node}</p>
         </MDBCol>
       </MDBRow>
-      <MDBRow className='mb-5 mx-5'>
+      <MDBRow className='mb-5'>
         <MDBCol md='4'>
           <MDBIcon fab icon='html5' size='3x' style={{ color: '#f06529' }} />
           <h5 className='font-weight-bold my-4'>HTML5</h5>
@@ -70,7 +70,7 @@ const Skills = () => {
           <p className='grey-text mb-md-0 mb-5'>{git} </p>
         </MDBCol>
       </MDBRow>
-      <MDBRow className='mb-5 mx-5'>
+      <MDBRow className='mb-5'>
         <MDBCol md='4'>
           <MDBIcon icon='database' size='3x' style={{ color: '#000' }} />
           <h5 className='font-weight-bold my-4'>SQL e NoSQL</h5>

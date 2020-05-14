@@ -20,7 +20,7 @@ const Features = () => {
     <CardContainer>
       <h2 className='h1-responsive font-weight-bold my-5'>{title}</h2>
       <p className='lead grey-text w-responsive mx-auto mb-5'>{description}</p>
-      <MDBRow className='ml-5 mr-5'>
+      <MDBRow className='mx-md-5'>
         <MDBCol md='4'>
           <MDBIcon icon='code' size='3x' className='light-steel-blue-text' />
           <h5 className='font-weight-bold my-4'>Back-end</h5>
