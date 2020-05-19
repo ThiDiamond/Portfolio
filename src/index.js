@@ -3,6 +3,7 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './assets/scss/mdb.scss';
-import './Colors.css';
+import './assets/scss/mdb-pro.scss';
+import './css/Colors.css';
+
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -13,6 +13,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { navAbout, navHome } from '../Texts';
 import { returnLanguage } from '../utils';
+import Intro from './Intro';
 
 class NavHeader extends Component {
   constructor(props) {
@@ -32,6 +33,8 @@ class NavHeader extends Component {
     const element = document.getElementById('intro-end');
     const block = isHome ? 'end' : 'start';
     element.scrollIntoView({ behavior: 'smooth', block });
+    const collapsed = false;
+    this.handleTogglerClick();
   };
 
   handleTogglerClick = () => {
@@ -49,13 +52,13 @@ class NavHeader extends Component {
   render() {
     const { children } = this.props;
 
-    const navStyle = { marginTop: '0' };
+    const navStyle = {
+      marginTop: '0',
+      //
+    };
+
     const overlay = (
-      <div
-        id='sidenav-overlay'
-        style={{ backgroundColor: '#8a6a8d' }}
-        onClick={this.handleTogglerClick}
-      />
+      <div id='sidenav-overlay' onClick={this.handleTogglerClick} />
     );
 
     const { collapsed, isHome, isAbout } = this.state;
@@ -65,53 +68,57 @@ class NavHeader extends Component {
     return (
       <div>
         <Router>
-          <MDBNavbar
-            color='primary-color'
-            style={navStyle}
-            dark
-            expand='md'
-            fixed='top'
-            scrolling
-            transparent
-          >
-            <MDBContainer>
-              <MDBNavbarBrand>
-                <MDBIcon
-                  className='light-steel-text'
-                  size='2x'
-                  fab
-                  icon='react'
-                />
-              </MDBNavbarBrand>
-              <MDBNavbarBrand>
-                <strong className='white-text'>Thiago Santana</strong>
-              </MDBNavbarBrand>
-              <MDBNavbarToggler onClick={this.handleTogglerClick} />
-              <MDBCollapse isOpen={collapsed} navbar>
-                <MDBNavbarNav left>
-                  <MDBNavItem active={isHome}>
-                    <MDBNavLink
-                      exact
-                      to='/home'
-                      onClick={() => this.handleNavClick(true, false)}
-                    >
-                      {home}
-                    </MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem active={isAbout}>
-                    <MDBNavLink
-                      exact
-                      to='/about'
-                      onClick={() => this.handleNavClick(false, true)}
-                    >
-                      {about}
-                    </MDBNavLink>
-                  </MDBNavItem>
-                </MDBNavbarNav>
-              </MDBCollapse>
-            </MDBContainer>
-          </MDBNavbar>
-          {collapsed && overlay}
+          <div>
+            <MDBNavbar
+              color='primary-color'
+              style={navStyle}
+              dark
+              expand='md'
+              fixed='top'
+              scrolling
+              sticky
+              transparent
+            >
+              <MDBContainer>
+                <MDBNavbarBrand>
+                  <MDBIcon
+                    className='light-steel-text'
+                    size='2x'
+                    fab
+                    icon='react'
+                  />
+                </MDBNavbarBrand>
+                <MDBNavbarBrand>
+                  <strong className='white-text'>Thiago Santana</strong>
+                </MDBNavbarBrand>
+                <MDBNavbarToggler onClick={this.handleTogglerClick} />
+                <MDBCollapse isOpen={collapsed} navbar>
+                  <MDBNavbarNav left>
+                    <MDBNavItem active={isHome}>
+                      <MDBNavLink
+                        exact
+                        to='/home'
+                        onClick={() => this.handleNavClick(true, false)}
+                      >
+                        {home}
+                      </MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem active={isAbout}>
+                      <MDBNavLink
+                        exact
+                        to='/about'
+                        onClick={() => this.handleNavClick(false, true)}
+                      >
+                        {about}
+                      </MDBNavLink>
+                    </MDBNavItem>
+                  </MDBNavbarNav>
+                </MDBCollapse>
+              </MDBContainer>
+            </MDBNavbar>
+            {collapsed && overlay}
+          </div>
+          <Intro />
           <main>{children}</main>
         </Router>
       </div>

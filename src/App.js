@@ -1,17 +1,15 @@
 import { MDBContainer } from 'mdbreact';
 import React from 'react';
 import Footer from './components/Footer';
-import Intro from './components/Intro';
-import NavHeader from './components/NavHeader';
+import NavRoutes from './components/NavRoutes';
 import Routes from './Routes';
 const App = () => (
   <>
-    <NavHeader>
-      <Intro />
+    <NavRoutes>
       <MDBContainer>
         <Routes />
       </MDBContainer>
-    </NavHeader>
+    </NavRoutes>
     <Footer />
   </>
 );
