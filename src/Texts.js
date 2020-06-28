@@ -8,6 +8,11 @@ export const navAbout = {
   en: 'About me',
 };
 
+export const navChallenges = {
+  pt: 'Desafios',
+  en: 'Challenges',
+};
+
 export const introTitle = {
   pt: 'Desenvolvedor Web',
   en: 'Web Developer',
@@ -166,4 +171,14 @@ export const wordpressDescription = {
 
   en:
     "Solution for fast and low-cost development, converting free HTML templates to PHP, thus being able to use Wordpress's own CRM.",
+};
+
+export const projectsTitle = {
+  pt: 'Meus Projetos',
+  en: 'My Projects',
+};
+
+export const projectsDescription = {
+  pt: '',
+  en: '',
 };

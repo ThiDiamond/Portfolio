@@ -1,10 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import About from './pages/About';
-import Articles from './pages/Articles';
+import Challenges from './pages/Challenges';
 import Home from './pages/Home';
-
-// PRO-END
+import Portfolio from './pages/Portfolio';
 
 class Routes extends React.Component {
   render() {
@@ -13,7 +12,9 @@ class Routes extends React.Component {
         <Route exact path='/' component={Home} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/about' component={About} />
-        <Route exact path='/articles' component={Articles} />
+        <Route exact path='/challenges' component={Challenges} />
+        <Route exact path='/Portfolio' component={Portfolio} />
+
         <Route
           render={function () {
             return <h1>Not Found</h1>;

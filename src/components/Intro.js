@@ -2,6 +2,7 @@ import {
   MDBBtn,
   MDBCol,
   MDBContainer,
+  MDBIcon,
   MDBMask,
   MDBRow,
   MDBView,
@@ -32,12 +33,13 @@ const Intro = () => {
                   {description}
                 </h5>
                 <MDBBtn
+                  social='li'
                   className=''
                   size='lg'
                   href='https://www.linkedin.com/in/thiago-santana-956653178/'
                   target='_blank'
                 >
-                  {button}
+                  <MDBIcon fab icon='linkedin' className='mr-1' /> {button}
                 </MDBBtn>
               </MDBCol>
             </MDBRow>

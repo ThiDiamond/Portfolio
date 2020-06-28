@@ -10,8 +10,8 @@ import {
   MDBNavLink,
 } from 'mdbreact';
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { navAbout, navHome } from '../Texts';
+import { BrowserRouter as Router, matchPath } from 'react-router-dom';
+import { navAbout, navChallenges, navHome } from '../Texts';
 import { returnLanguage } from '../utils';
 import Intro from './Intro';
 
@@ -27,17 +27,16 @@ class NavRoutes extends Component {
     };
   }
 
-  handleNavClick = (isHome, isAbout) => {
-    this.setState({ isHome, isAbout });
-
+  handleNavClick = () => {
     const element = document.getElementById('intro-end');
-    const block = isHome ? 'end' : 'start';
-    element.scrollIntoView({ behavior: 'smooth', block });
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     const collapsed = false;
     this.setState({ collapsed });
   };
 
+  isItemActive = (path) =>
+    matchPath(window.location.pathname, { path, exact: true });
   handleTogglerClick = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -57,10 +56,11 @@ class NavRoutes extends Component {
     const overlay = (
       <div id='sidenav-overlay' onClick={this.handleTogglerClick} />
     );
-    const { collapsed, isHome, isAbout } = this.state;
+    const { collapsed } = this.state;
 
     const home = returnLanguage(navHome);
     const about = returnLanguage(navAbout);
+    const challenges = returnLanguage(navChallenges);
 
     return (
       <div>
@@ -90,22 +90,44 @@ class NavRoutes extends Component {
                 <MDBNavbarToggler onClick={this.handleTogglerClick} />
                 <MDBCollapse isOpen={collapsed} navbar>
                   <MDBNavbarNav left>
-                    <MDBNavItem active={isHome}>
+                    <MDBNavItem
+                      active={
+                        this.isItemActive('/home') || this.isItemActive('/')
+                      }
+                    >
                       <MDBNavLink
                         exact
                         to='/home'
-                        onClick={() => this.handleNavClick(true, false)}
+                        onClick={this.handleNavClick}
                       >
                         {home}
                       </MDBNavLink>
                     </MDBNavItem>
-                    <MDBNavItem active={isAbout}>
+                    <MDBNavItem active={this.isItemActive('/about')}>
                       <MDBNavLink
                         exact
                         to='/about'
-                        onClick={() => this.handleNavClick(false, true)}
+                        onClick={this.handleNavClick}
                       >
                         {about}
+                      </MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem active={this.isItemActive('/challenges')}>
+                      <MDBNavLink
+                        exact
+                        to='/challenges'
+                        onClick={this.handleNavClick}
+                      >
+                        {challenges}
+                      </MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem active={this.isItemActive('/portfolio')}>
+                      <MDBNavLink
+                        exact
+                        to='/portfolio'
+                        onClick={this.handleNavClick}
+                      >
+                        Portfolio
                       </MDBNavLink>
                     </MDBNavItem>
                   </MDBNavbarNav>
