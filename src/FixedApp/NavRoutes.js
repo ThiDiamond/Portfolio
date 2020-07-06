@@ -11,22 +11,29 @@ import {
 } from 'mdbreact';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, matchPath } from 'react-router-dom';
-import { navAbout, navChallenges, navHome } from '../Texts';
-import { returnLanguage } from '../utils';
+import { navAbout, navHome, navSkills } from './content';
 import Intro from './Intro';
 
 class NavRoutes extends Component {
   constructor(props) {
-    const { pathname } = window.location;
     super(props);
-    const isHome = pathname === '/home' || pathname === '/' ? true : false;
     this.state = {
       collapsed: false,
-      isHome,
-      isAbout: !isHome,
     };
   }
 
+  NavLink = ({ to, label, isHome }) => {
+    const isActive = isHome
+      ? this.isItemActive('/home') || this.isItemActive('/')
+      : this.isItemActive(to);
+    return (
+      <MDBNavItem active={isActive}>
+        <MDBNavLink exact to={to} onClick={this.handleNavClick}>
+          {label}
+        </MDBNavLink>
+      </MDBNavItem>
+    );
+  };
   handleNavClick = () => {
     const element = document.getElementById('intro-end');
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -36,7 +43,7 @@ class NavRoutes extends Component {
   };
 
   isItemActive = (path) =>
-    matchPath(window.location.pathname, { path, exact: true });
+    matchPath(window.location.pathname, { path, exact: true }) ? true : false;
   handleTogglerClick = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -51,16 +58,12 @@ class NavRoutes extends Component {
 
   render() {
     const { children } = this.props;
-
+    const { NavLink } = this;
     const navStyle = {};
     const overlay = (
       <div id='sidenav-overlay' onClick={this.handleTogglerClick} />
     );
     const { collapsed } = this.state;
-
-    const home = returnLanguage(navHome);
-    const about = returnLanguage(navAbout);
-    const challenges = returnLanguage(navChallenges);
 
     return (
       <div>
@@ -90,46 +93,10 @@ class NavRoutes extends Component {
                 <MDBNavbarToggler onClick={this.handleTogglerClick} />
                 <MDBCollapse isOpen={collapsed} navbar>
                   <MDBNavbarNav left>
-                    <MDBNavItem
-                      active={
-                        this.isItemActive('/home') || this.isItemActive('/')
-                      }
-                    >
-                      <MDBNavLink
-                        exact
-                        to='/home'
-                        onClick={this.handleNavClick}
-                      >
-                        {home}
-                      </MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem active={this.isItemActive('/about')}>
-                      <MDBNavLink
-                        exact
-                        to='/about'
-                        onClick={this.handleNavClick}
-                      >
-                        {about}
-                      </MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem active={this.isItemActive('/challenges')}>
-                      <MDBNavLink
-                        exact
-                        to='/challenges'
-                        onClick={this.handleNavClick}
-                      >
-                        {challenges}
-                      </MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem active={this.isItemActive('/portfolio')}>
-                      <MDBNavLink
-                        exact
-                        to='/portfolio'
-                        onClick={this.handleNavClick}
-                      >
-                        Portfolio
-                      </MDBNavLink>
-                    </MDBNavItem>
+                    <NavLink to='/home' isHome label={navHome} />
+                    <NavLink to='/about' label={navAbout} />
+                    <NavLink to='/skills' label={navSkills} />
+                    <NavLink to='/portfolio' label='Portfolio' />
                   </MDBNavbarNav>
                 </MDBCollapse>
               </MDBContainer>

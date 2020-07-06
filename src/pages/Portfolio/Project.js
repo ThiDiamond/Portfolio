@@ -8,7 +8,17 @@ import {
 } from 'mdbreact';
 import React from 'react';
 
-const Project = ({ image, link, title, description, codeLink, docLink }) => {
+const Project = ({
+  image,
+  link,
+  title,
+  description,
+  codeLink,
+  docLink,
+  iconName,
+  iconColor,
+  fab,
+}) => {
   return (
     <MDBCol md='6' xl='5' className='mb-4'>
       <MDBView className='overlay rounded z-depth-2' waves>
@@ -20,20 +30,29 @@ const Project = ({ image, link, title, description, codeLink, docLink }) => {
       <MDBCardBody className='pb-0'>
         <a href={link} className='slate-gray-text'>
           <h5 className='font-weight-bold mt-2 mb-3 slate-gray-text'>
-            <MDBIcon icon='code' className='pr-2' />
+            <MDBIcon
+              fab={fab}
+              icon={iconName}
+              className='pr-2'
+              style={{ color: iconColor }}
+            />
             {title}
           </h5>
         </a>
         <p>{description}</p>
         <div>
-          <MDBBtn href={codeLink} color='primary' rounded>
-            <MDBIcon fab icon='github' className='pr-2' />
-            Source code
-          </MDBBtn>
-          <MDBBtn href={docLink} color='primary' rounded>
-            <MDBIcon icon='book' className='pr-2' />
-            Documentation
-          </MDBBtn>
+          {!!codeLink && (
+            <MDBBtn href={codeLink} color='primary' rounded>
+              <MDBIcon fab icon='github' className='pr-2' />
+              Source code
+            </MDBBtn>
+          )}
+          {!!docLink && (
+            <MDBBtn href={docLink} color='primary' rounded>
+              <MDBIcon icon='book' className='pr-2' />
+              Documentation
+            </MDBBtn>
+          )}
         </div>
       </MDBCardBody>
     </MDBCol>

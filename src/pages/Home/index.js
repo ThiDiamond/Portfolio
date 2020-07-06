@@ -1,10 +1,10 @@
 import React from 'react';
-import Features from '../../components/Features';
+import KnowledgeAreas from './KnowledgeAreas';
 const Home = () => {
   return (
-    <div id='home'>
-      <Features />
-    </div>
+    <section id='home'>
+      <KnowledgeAreas />
+    </section>
   );
 };
 

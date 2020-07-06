@@ -9,11 +9,9 @@ import {
 } from 'mdbreact';
 import React from 'react';
 import image from '../assets/galaxy.jpg';
-import { introButton, introDescription } from '../Texts';
-import { returnLanguage } from '../utils';
+import { introButton, introDescription } from './content';
+
 const Intro = () => {
-  const description = returnLanguage(introDescription);
-  const button = returnLanguage(introButton);
   return (
     <>
       <MDBView src={image} fixed>
@@ -30,7 +28,7 @@ const Intro = () => {
                 </h1>
                 <hr className='hr-light my-4' />
                 <h5 className='text-uppercase pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text font-weight-bold'>
-                  {description}
+                  {introDescription}
                 </h5>
                 <MDBBtn
                   social='li'
@@ -39,7 +37,7 @@ const Intro = () => {
                   href='https://www.linkedin.com/in/thiago-santana-956653178/'
                   target='_blank'
                 >
-                  <MDBIcon fab icon='linkedin' className='mr-1' /> {button}
+                  <MDBIcon fab icon='linkedin' className='mr-1' /> {introButton}
                 </MDBBtn>
               </MDBCol>
             </MDBRow>
