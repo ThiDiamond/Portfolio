@@ -20,3 +20,19 @@
 .dark-slate-gray {
   background-color: #363054;
 }
+
+.btn-default {
+  background-color: #363054 !important;
+}
+
+.btn-primary {
+  background-color: #363054 !important;
+}
+
+.primary-color {
+  background-color: #363054 !important;
+}
+
+.btn-rounded {
+  border-radius: 10em;
+}
