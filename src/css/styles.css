@@ -25,6 +25,10 @@
   background-color: #363054 !important;
 }
 
+.inactive {
+  background-color: #c1a1c3 !important;
+}
+
 .btn-primary {
   background-color: #363054 !important;
 }

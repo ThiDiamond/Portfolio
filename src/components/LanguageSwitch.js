@@ -1,0 +1,29 @@
+import React, { useContext } from 'react';
+import { MDBBtn } from 'mdbreact';
+import Brazil from '../assets/Brazil';
+import Usa from '../assets/Usa';
+import LanguageContext from '../contexts/Language';
+const LanguageSwitch = () => {
+  const { language, setLanguage } = useContext(LanguageContext);
+  const getClassname = (lang) => (lang === language ? '' : 'inactive');
+  return (
+    <div style={{}} className="d-flex justify-content-center mt-5">
+      <MDBBtn
+        className={getClassname('pt')}
+        size="lg"
+        onClick={() => setLanguage('pt')}
+      >
+        <Brazil />
+      </MDBBtn>
+      <MDBBtn
+        className={getClassname('en')}
+        size="lg"
+        onClick={() => setLanguage('en')}
+      >
+        <Usa />
+      </MDBBtn>
+    </div>
+  );
+};
+
+export default LanguageSwitch;

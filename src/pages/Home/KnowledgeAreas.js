@@ -1,41 +1,46 @@
-import { MDBRow } from 'mdbreact';
-import React from 'react';
-import CardContainer from '../../components/CardContainer';
-import Area from './Area';
+import { MDBRow } from "mdbreact";
+import React, { useContext } from "react";
+import CardContainer from "../../components/CardContainer";
+import Area from "./Area";
 import {
   backendDescription,
   databaseDescription,
   frontendDescription,
   knowledgesDescription,
   knowledgesTitle,
-} from './content';
+} from "./content";
+import LanguageContext from "../../contexts/Language";
 
 const KnowledgeAreas = () => {
+  const { language } = useContext(LanguageContext);
+
   return (
     <CardContainer>
-      <h2 className='h1-responsive font-weight-bold my-5'>{knowledgesTitle}</h2>
-      <p className='lead grey-text w-responsive mx-auto mb-5'>
-        {knowledgesDescription}
+      <h2 className="h1-responsive font-weight-bold my-5">
+        {knowledgesTitle[language]}
+      </h2>
+      <p className="lead grey-text w-responsive mx-auto mb-5">
+        {knowledgesDescription[language]}
       </p>
-      <MDBRow className='mx-md-5'>
+      <MDBRow className="mx-md-5">
         <Area
-          iconName='code'
-          className='light-steel-blue-text'
-          title='Back-end'
-          description={backendDescription}
+          iconName="code"
+          className="light-steel-blue-text"
+          title="Back-end"
+          description={backendDescription[language]}
         />
         <Area
-          iconName='mobile-alt'
-          className='light-steel-text'
-          title='Front-end'
-          description={frontendDescription}
+          iconName="mobile-alt"
+          className="light-steel-text"
+          title="Front-end"
+          description={frontendDescription[language]}
         />
 
         <Area
-          iconName='database'
-          className='slate-blue-text'
-          title='Database'
-          description={databaseDescription}
+          iconName="database"
+          className="slate-blue-text"
+          title="Database"
+          description={databaseDescription[language]}
         />
       </MDBRow>
     </CardContainer>

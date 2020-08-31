@@ -1,6 +1,4 @@
-import { returnLanguage } from '../../utils';
-
-export const projectsTitle = returnLanguage({
-  pt: 'Meus Projetos',
-  en: 'My Projects',
-});
+export const projectsTitle = {
+  pt: "Meus Projetos",
+  en: "My Projects",
+};
