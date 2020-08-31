@@ -17,7 +17,7 @@ const Intro = () => {
   const { language } = useContext(LanguageContext);
   return (
     <>
-      <MDBView src={image} fixed>
+      <MDBView src={image}>
         <MDBMask className="rgba-black-strong d-flex justify-content-center align-items-center">
           <MDBContainer>
             <MDBRow>
@@ -30,7 +30,7 @@ const Intro = () => {
                   </span>
                 </h1>
                 <hr className="hr-light my-4" />
-                <h5 className="text-uppercase pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text font-weight-bold">
+                <h5 className="text-uppercase pt-md-5 pt-sm-2 pt-3 pb-md-5 pb-sm-3 pb-3 white-text font-weight-bold">
                   {introDescription[language]}
                 </h5>
                 <MDBBtn
@@ -43,9 +43,10 @@ const Intro = () => {
                   <MDBIcon fab icon="linkedin" className="mr-1" />{' '}
                   {introButton[language]}
                 </MDBBtn>
+
+                <LanguageSwitch />
               </MDBCol>
             </MDBRow>
-            <LanguageSwitch />
           </MDBContainer>
         </MDBMask>
       </MDBView>

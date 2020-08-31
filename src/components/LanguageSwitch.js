@@ -10,14 +10,14 @@ const LanguageSwitch = () => {
     <div style={{}} className="d-flex justify-content-center">
       <MDBBtn
         className={getClassname('pt')}
-        size="md"
+        size="sm"
         onClick={() => setLanguage('pt')}
       >
         <Brazil />
       </MDBBtn>
       <MDBBtn
         className={getClassname('en')}
-        size="md"
+        size="sm"
         onClick={() => setLanguage('en')}
       >
         <Usa />
