@@ -7,17 +7,17 @@ const LanguageSwitch = () => {
   const { language, setLanguage } = useContext(LanguageContext);
   const getClassname = (lang) => (lang === language ? '' : 'inactive');
   return (
-    <div style={{}} className="d-flex justify-content-center mt-5">
+    <div style={{}} className="d-flex justify-content-center">
       <MDBBtn
         className={getClassname('pt')}
-        size="lg"
+        size="md"
         onClick={() => setLanguage('pt')}
       >
         <Brazil />
       </MDBBtn>
       <MDBBtn
         className={getClassname('en')}
-        size="lg"
+        size="md"
         onClick={() => setLanguage('en')}
       >
         <Usa />

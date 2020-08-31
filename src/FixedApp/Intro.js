@@ -6,12 +6,12 @@ import {
   MDBMask,
   MDBRow,
   MDBView,
-} from "mdbreact";
-import React, { useContext } from "react";
-import image from "../assets/galaxy.jpg";
-import { introButton, introDescription } from "./content";
-import LanguageSwitch from "../components/LanguageSwitch";
-import LanguageContext from "../contexts/Language";
+} from 'mdbreact';
+import React, { useContext } from 'react';
+import image from '../assets/galaxy.jpg';
+import { introButton, introDescription } from './content';
+import LanguageSwitch from '../components/LanguageSwitch';
+import LanguageContext from '../contexts/Language';
 
 const Intro = () => {
   const { language } = useContext(LanguageContext);
@@ -40,15 +40,16 @@ const Intro = () => {
                   href="https://www.linkedin.com/in/thiago-santana-956653178/"
                   target="_blank"
                 >
-                  <MDBIcon fab icon="linkedin" className="mr-1" />{" "}
+                  <MDBIcon fab icon="linkedin" className="mr-1" />{' '}
                   {introButton[language]}
                 </MDBBtn>
-                <LanguageSwitch />
               </MDBCol>
             </MDBRow>
+            <LanguageSwitch />
           </MDBContainer>
         </MDBMask>
       </MDBView>
+
       <div id="intro-end" />
     </>
   );
