@@ -1,9 +1,11 @@
-import React from "react";
-import { MDBRow } from "mdbreact";
-import ContentSingle from "./ContentSingle";
-import galaxy from "../../assets/galaxy.jpg";
-import code from "../../assets/code.jpg";
-import python from "../../assets/python.jpg";
+import React from 'react';
+import { MDBRow } from 'mdbreact';
+import ContentSingle from './ContentSingle';
+import galaxy from '../../assets/galaxy.jpg';
+import code from '../../assets/code.jpg';
+import python from '../../assets/python.jpg';
+import house from '../../assets/house.jpg';
+
 const ContentList = () => {
   return (
     <div className="text-center my-5">
@@ -22,6 +24,11 @@ const ContentList = () => {
           title="Photo by Luca Bravo on Unsplash"
           link="https://unsplash.com/photos/XJXWbfSo2f0"
           image={code}
+        />
+        <ContentSingle
+          title="Photo by Jacques Bopp on Unsplash"
+          link="https://unsplash.com/photos/Hh18POSx5qk"
+          image={house}
         />
       </MDBRow>
     </div>

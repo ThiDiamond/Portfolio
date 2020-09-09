@@ -1,10 +1,11 @@
-import { MDBRow } from "mdbreact";
-import React, { useContext } from "react";
-import code from "../../assets/code.jpg";
-import python from "../../assets/python.jpg";
-import { projectsTitle } from "./content";
-import Project from "./Project";
-import LanguageContext from "../../contexts/Language";
+import { MDBRow } from 'mdbreact';
+import React, { useContext } from 'react';
+import code from '../../assets/code.jpg';
+import house from '../../assets/house.jpg';
+import python from '../../assets/python.jpg';
+import { projectsTitle } from './content';
+import Project from './Project';
+import LanguageContext from '../../contexts/Language';
 
 const Projects = () => {
   const { language } = useContext(LanguageContext);
@@ -33,6 +34,15 @@ const Projects = () => {
           title="URI Online Judge Challenges"
           image={python}
           codeLink="https://github.com/ThiDiamond/Uri"
+        />
+        <Project
+          fab
+          iconName="react"
+          iconColor="#00D8FF"
+          title="Real Estate Website"
+          image={house}
+          codeLink="https://github.com/ThiDiamond/RealEstate/"
+          siteLink="http://thidiamond.tech/"
         />
       </MDBRow>
     </section>
