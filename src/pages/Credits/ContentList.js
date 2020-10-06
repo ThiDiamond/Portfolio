@@ -5,6 +5,7 @@ import galaxy from '../../assets/galaxy.jpg';
 import code from '../../assets/code.jpg';
 import python from '../../assets/python.jpg';
 import house from '../../assets/house.jpg';
+import lock from '../../assets/lock.jpg';
 
 const ContentList = () => {
   return (
@@ -30,9 +31,13 @@ const ContentList = () => {
           link="https://unsplash.com/photos/Hh18POSx5qk"
           image={house}
         />
+        <ContentSingle
+          title="Photo by iMattSmart on Unsplash"
+          link="https://unsplash.com/photos/Vp3oWLsPOss"
+          image={lock}
+        />
       </MDBRow>
     </div>
   );
 };
-
 export default ContentList;

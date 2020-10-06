@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import code from '../../assets/code.jpg';
 import house from '../../assets/house.jpg';
 import python from '../../assets/python.jpg';
+import lock from '../../assets/lock.jpg';
 import { projectsTitle } from './content';
 import Project from './Project';
 import LanguageContext from '../../contexts/Language';
@@ -43,6 +44,15 @@ const Projects = () => {
           image={house}
           codeLink="https://github.com/ThiDiamond/RealEstate/"
           siteLink="http://thidiamond.tech/"
+        />
+
+        <Project
+          iconName="lock"
+          iconColor="#FDAC21"
+          title="JWT Auth App"
+          image={lock}
+          codeLink="https://github.com/ThiDiamond/jwt-frontend"
+          siteLink="https://thidiamond-jwt-auth.netlify.app/"
         />
       </MDBRow>
     </section>
