@@ -4,6 +4,8 @@ import code from '../../assets/code.jpg';
 import house from '../../assets/house.jpg';
 import python from '../../assets/python.jpg';
 import lock from '../../assets/lock.jpg';
+import buildbox from '../../assets/buildbox.jpg';
+
 import { projectsTitle } from './content';
 import Project from './Project';
 import LanguageContext from '../../contexts/Language';
@@ -53,6 +55,15 @@ const Projects = () => {
           image={lock}
           codeLink="https://github.com/ThiDiamond/jwt-frontend"
           siteLink="https://thidiamond-jwt-auth.netlify.app/"
+        />
+        <Project
+          iconName="react"
+          fab
+          iconColor="#00D8FF"
+          title="Buildbox Web Challenge"
+          image={buildbox}
+          codeLink="https://github.com/ThiDiamond/web-developer-challenge"
+          siteLink="https://thidiamond-buildbox.netlify.app/"
         />
       </MDBRow>
     </section>
