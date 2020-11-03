@@ -4,7 +4,7 @@ import code from '../../assets/code.jpg';
 import house from '../../assets/house.jpg';
 import python from '../../assets/python.jpg';
 import lock from '../../assets/lock.jpg';
-import buildbox from '../../assets/buildbox.jpg';
+import buildbox from '../../assets/buildbox.jpeg';
 
 import { projectsTitle } from './content';
 import Project from './Project';
